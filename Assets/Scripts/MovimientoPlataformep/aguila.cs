@@ -8,13 +8,15 @@ public class aguila : MonoBehaviour
     Animator anim;
     bool girar = true;
     SpriteRenderer aguilaRender;
+    public float vel = 3f;
+    float movement = 1f;
 
     //Funciones -----------------------------------------
 
     private void Voltear()
     {
-        voltearCaballero = !voltearCaballero;
-        caballeroRender.flipX = !caballeroRender.flipX;
+        girar = !girar;
+        aguilaRender.flipX = !aguilaRender.flipX;
     }
 
     //-----------------------------------------------------
@@ -29,6 +31,6 @@ public class aguila : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(new Vector2(Time.deltaTime * vel * movement, 0));
     }
 }
